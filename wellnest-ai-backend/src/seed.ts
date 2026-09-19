@@ -1,4 +1,5 @@
 import { AppDataSource } from './data-source';
+import { config } from './config/environment';
 import { User } from './modules/database/entities/user.entity';
 import { UserPreference } from './modules/database/entities/user-preference.entity';
 import { Vital } from './modules/database/entities/vital.entity';
@@ -19,6 +20,12 @@ const DEMO_EMAIL = 'sarah@wellnest.ai';
 const DEMO_PASSWORD = 'WellNest123!';
 
 async function seed() {
+  // In production the DataSource runs with synchronize:false; a fresh Render
+  // database still needs its schema created before we can seed it.
+  if (config.nodeEnv === 'production') {
+    AppDataSource.setOptions({ ...AppDataSource.options, synchronize: true });
+  }
+
   await AppDataSource.initialize();
 
   const userRepo = AppDataSource.getRepository(User);
