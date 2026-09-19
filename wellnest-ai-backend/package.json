@@ -14,7 +14,8 @@
     "seed": "ts-node -r tsconfig-paths/register src/seed.ts",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:cov": "jest --coverage"
+    "test:cov": "jest --coverage",
+    "render-build": "npm install --include=dev && npm run build && npm rebuild sqlite3 && npm run seed"
   },
   "packageManager": "pnpm@10.28.1",
   "keywords": [
