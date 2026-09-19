@@ -1,0 +1,264 @@
+
+
+PRODUCT REQUIREMENTS DOCUMENT
+WellNest AI
+Understand. Track. Heal Together.
+Version 1.0 — Hackathon MVP
+WeTech AI Hackathon 2026 · Track: Social Impact — Healthcare
+Prepared by Team WellNest
+September 2026
+
+
+Contents
+(Right-click below and choose “Update Field” — or press Ctrl+A then F9 — to generate the page list.)
+TOC \h \o "1-2"
+
+
+1. Product Overview
+Product name: WellNest AI
+WellNest AI is an AI-powered healthcare companion that helps patients and caregivers understand medical information, manage medications, track treatment plans, and navigate their healthcare journey with confidence.
+Rather than functioning as a general AI chatbot, WellNest is designed to become a patient's long-term healthcare companion by organizing medical records into a personalised health journey and providing actionable guidance after every hospital visit.
+2. Problem Statement
+Every day, patients leave hospitals, clinics, and pharmacies with prescriptions, diagnoses, lab reports, and treatment plans they do not fully understand. Medical information is often filled with technical terminology, delivered within short consultation times, and stored across paper documents or different messaging platforms. This results in patients making avoidable mistakes during treatment.
+Challenges patients face
+Difficulty understanding diagnoses and medical terms
+Confusion about medications and dosage instructions
+Missed appointments and follow-up care
+Poor medication adherence
+Family caregivers lacking access to important health information
+Medical records scattered across different platforms
+Opportunity
+Patients should not leave healthcare facilities confused about their own care.
+3. Vision Statement
+No patient should leave a healthcare facility confused about their care. WellNest empowers patients with understandable healthcare information and personalised next steps using AI.
+4. Product Goals
+Primary goal
+Help patients understand, organise, and manage their treatment journey through AI-powered healthcare guidance.
+Secondary goals
+Improve health literacy
+Reduce medication errors
+Increase treatment adherence
+Support family caregivers
+Simplify access to personal medical history
+5. Target Users
+Primary users — Patients
+Adults managing acute or chronic health conditions who need help understanding prescriptions, diagnoses, lab results, and treatment plans.
+Secondary users — Caregivers
+Family members responsible for helping parents, children, spouses, or elderly relatives manage medications and appointments.
+6. User Personas
+Sarah — Patient   ·   Age 45
+Needs
+Understand her diagnosis
+Know when and how to take medication
+Track appointments and treatment progress
+Pain points
+Medical jargon is difficult to understand
+Forgetting medication schedules
+Paper medical records are easily misplaced
+
+Tolu — Caregiver   ·   Age 28
+Needs
+Monitor her mother's medication schedule
+Receive reminders for appointments
+Understand medical reports without attending hospital visits
+Pain points
+Lives separately from her mother
+Receives prescriptions through WhatsApp
+Struggles to explain medical instructions
+7. Solution Overview
+WellNest transforms complex medical documents into simple, personalised healthcare guidance.
+Core experience — users can:
+Upload prescriptions, lab reports, or doctor's notes
+Receive AI-generated explanations in simple language
+Get personalised medication schedules
+Ask follow-up health questions through AI
+Track their healthcare journey over time
+Share treatment plans with trusted caregivers
+8. MVP Features
+P0  1. AI Medical Document Upload
+Users upload prescriptions, lab reports, or doctor's notes using camera scan, image upload, or PDF upload.
+Output
+Extracted diagnosis
+Medication list
+Dosage instructions
+Follow-up recommendations
+P0  2. AI Diagnosis Translator
+AI converts medical terminology into plain, easy-to-understand language.
+Medical term
+Hypertension
+WellNest explanation
+Your blood pressure is higher than normal and requires regular monitoring and medication.
+
+P0  3. Medication Planner
+Automatically generates a schedule of morning, afternoon, and night medications with dosage instructions and before/after meal reminders. Users can mark medications as taken to track adherence.
+P0  4. WellNest AI Assistant
+A contextual AI assistant that answers questions using the patient's uploaded medical information.
+Example questions
+What does my diagnosis mean?
+Can I take this medicine after eating?
+What foods should I avoid?
+What happens if I miss a dose?
+P1  5. Family Care Mode
+Patients invite trusted caregivers, who can view medication schedules, receive reminders, track appointments, and access emergency health information with permission.
+P1  6. Health Journey Timeline
+A chronological timeline showing diagnoses, uploaded reports, medication updates, appointments, and treatment progress.
+P1  7. Emergency Health Wallet
+Stores blood group, allergies, existing medical conditions, emergency contacts, and current medications for use in an emergency.
+9. End-to-End Product Flow
+Step 1 — Onboarding
+Launch WellNest
+Sign up or log in
+Select Patient or Caregiver
+Complete profile information
+Enter Home Dashboard
+Step 2 — Upload medical document
+Tap “Upload Document”
+Scan or upload prescription, report, or doctor's note
+Submit document for AI analysis
+Step 3 — AI analysis
+WellNest AI reads the document using OCR, identifies diagnoses and medications, extracts dosage and treatment instructions, and generates a simplified health summary.
+Step 4 — Health summary
+The patient receives a diagnosis explanation, plain-language summary, recommended actions, risk indicators, and follow-up suggestions.
+Step 5 — Medication plan
+AI creates a personalised medication schedule with reminders and adherence tracking.
+Step 6 — Ask WellNest AI
+Users ask questions about their diagnosis or medications and receive contextual answers based on uploaded records.
+Step 7 — Family care
+Users share treatment plans with caregivers, who receive reminders and updates.
+Step 8 — Health journey dashboard
+WellNest continuously updates the patient's health timeline and progress.
+10. Information Architecture
+Bottom navigation (mobile-first)
+Home
+Records
+Ask AI
+Family Care
+Profile
+11. Screen List (Hackathon MVP)
+#
+Screen
+Implemented in frontend
+1
+Splash screen
+Planned
+2
+Welcome / onboarding
+Planned
+3
+Patient or caregiver selection
+Planned
+4
+Home dashboard
+Yes
+5
+Upload medical document
+Yes
+6
+AI processing screen
+Planned
+7
+Diagnosis summary
+Yes
+8
+Medication planner
+Yes
+9
+WellNest AI chat
+Yes
+10
+Health journey timeline
+Yes
+11
+Family care dashboard
+Yes
+12
+Emergency health wallet
+Yes
+12. Functional Requirements
+P0 — Must have
+User authentication
+Medical document upload
+OCR document reading
+AI diagnosis translation
+Medication schedule generator
+AI healthcare chat
+P1 — Should have
+Family Care Mode
+Health timeline
+Appointment reminders
+Emergency health wallet
+13. Non-Functional Requirements
+Mobile-first design (iOS & Android)
+Accessible typography for adults and elderly users
+Large, touch-friendly buttons
+Fast AI response time
+Secure handling of health records
+Simple and trustworthy user interface
+14. AI Components
+OCR engine
+Extracts text from prescriptions, lab reports, and doctor's notes.
+Medical NLP engine
+Identifies diagnoses, medications, dosage instructions, and follow-up recommendations.
+AI assistant
+Answers healthcare questions using uploaded patient context.
+Recommendation engine
+Creates medication schedules, reminders, and care plans.
+15. Success Metrics (Hackathon MVP)
+Users successfully upload a medical document
+AI generates a simplified diagnosis summary
+Medication schedule is automatically created
+Users interact with WellNest AI Assistant
+Care plan can be shared with a caregiver
+16. Out of Scope (Future Versions)
+Video consultations
+Pharmacy delivery
+Insurance claims
+Wearable device integration
+Hospital appointment booking
+Predictive disease diagnosis
+These features are reserved for future versions after the MVP.
+17. Competitive Advantage
+Existing AI tools
+WellNest AI
+Explain one document at a time
+Creates a continuous healthcare journey
+Generic responses
+Personalised using uploaded medical history
+No medication management
+AI-generated medication schedules and reminders
+No caregiver support
+Family Care Mode with shared treatment plans
+No health timeline
+Tracks diagnoses, reports, appointments, and progress
+18. Expected Impact
+WellNest aims to improve healthcare accessibility by helping patients better understand their medical information, adhere to treatment plans, and involve caregivers throughout their healthcare journey.
+By combining AI with a patient-centred experience, WellNest reduces confusion after hospital visits and empowers users to make informed health decisions.
+
+19. Frontend Implementation Status
+A working frontend for the WellNest AI MVP has been built and is ready for the team to review, extend, and connect to the AI/OCR backend described in this document.
+Stack
+Vite + React 19
+Tailwind CSS (custom design system — see tokens below)
+React Router for client-side navigation
+lucide-react icon set
+Screens implemented
+Dashboard — health status hero, weekly adherence, quick actions, recent activity, latest vitals
+Documents — scan / upload / browse, drag-and-drop, recent documents list
+Medications — weekly adherence chart, time-of-day schedule, mark-as-taken, reminder toggles
+Ask WellNest AI — chat interface with quick-prompt chips and contextual replies
+Health Timeline — chronological record of diagnoses, documents, medication changes, appointments
+Family Care — caregiver list, access levels, invite flow
+Emergency Health Wallet — blood group, allergies, conditions, medications, emergency contacts
+Settings — account information and notification preferences
+Design system
+Indigo #2C49C0 (primary / brand, from the WellNest logo)
+Meadow green #2E9B4F (adherence and positive states)
+Coral #D5473D (emergency and alerts)
+Type: Sora for headings, IBM Plex Sans for body and data
+What's not built yet
+The frontend currently runs on mock data (src/data/mockData.js) so the team can review the full experience without a backend. The OCR pipeline, medical NLP engine, AI assistant, authentication, and persistence described in sections 12 and 14 still need to be built and wired in — the components are already shaped to accept that data once it exists.
+
+Hackathon Pitch Summary
+WellNest AI is an AI-powered healthcare companion that helps patients and caregivers understand medical records, manage medications, track treatment progress, and receive personalised healthcare guidance from one secure mobile application.
+Understand. Track. Heal Together.
+

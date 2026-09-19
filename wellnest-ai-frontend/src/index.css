@@ -1,0 +1,262 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-canvas text-ink font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-ink;
+  }
+  ::selection {
+    @apply bg-indigo/20;
+  }
+  :focus-visible {
+    outline: 2px solid #2C49C0;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #D4D9E6;
+    border-radius: 999px;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ===== Landing page animation kit ===== */
+
+  /* Scroll-reveal: hidden until .is-visible is added */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-32px);
+    transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(32px);
+    transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  .reveal-zoom {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  .is-visible.reveal,
+  .is-visible.reveal-left,
+  .is-visible.reveal-right,
+  .is-visible.reveal-zoom {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal-left,
+    .reveal-right,
+    .reveal-zoom {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  /* Hero entrance (runs on mount, staggered via --d) */
+  .hero-in {
+    opacity: 0;
+    animation: hero-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: var(--d, 0ms);
+  }
+  @keyframes hero-in {
+    from {
+      opacity: 0;
+      transform: translateY(26px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Floating gradient orbs behind the hero */
+  .orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(60px);
+    opacity: 0.5;
+    animation: orb-drift 14s ease-in-out infinite;
+    animation-delay: var(--d, 0s);
+  }
+  @keyframes orb-drift {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(28px, -34px) scale(1.08);
+    }
+    66% {
+      transform: translate(-24px, 18px) scale(0.94);
+    }
+  }
+
+  /* Gentle bob for decorative cards/icons */
+  .bob {
+    animation: bob 5s ease-in-out infinite;
+    animation-delay: var(--d, 0s);
+  }
+  @keyframes bob {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Pulsing halo rings */
+  .pulse-ring {
+    animation: pulse-ring 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(0.72);
+      opacity: 0.55;
+    }
+    80%, 100% {
+      transform: scale(1.6);
+      opacity: 0;
+    }
+  }
+
+  /* Rotating dashed ring */
+  .spin-slow {
+    animation: spin 22s linear infinite;
+  }
+  .spin-slower {
+    animation: spin 40s linear infinite reverse;
+  }
+
+  /* Live ECG heartbeat line */
+  .ecg-line {
+    stroke-dasharray: 1200;
+    stroke-dashoffset: 1200;
+    animation: ecg-draw 4.2s linear infinite;
+  }
+  @keyframes ecg-draw {
+    0% {
+      stroke-dashoffset: 1200;
+    }
+    55% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: -1200;
+    }
+  }
+
+  /* Word-by-word gradient headline reveal */
+  .word-in {
+    display: block;
+    opacity: 0;
+    animation: word-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: var(--d, 0ms);
+  }
+  @keyframes word-in {
+    from {
+      opacity: 0;
+      transform: translateY(0.6em) rotate(2deg);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Shimmering gradient headline text */
+  .text-shine {
+    background-size: 220% auto;
+    animation: text-shine 5s ease-in-out infinite;
+  }
+  @keyframes text-shine {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Marquee logos strip */
+  .marquee-track {
+    animation: marquee 30s linear infinite;
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Scroll cue mouse */
+  .scroll-wheel {
+    animation: scroll-wheel 1.8s ease-in-out infinite;
+  }
+  @keyframes scroll-wheel {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    70% {
+      opacity: 0;
+      transform: translateY(9px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-in,
+    .word-in {
+      animation: none;
+      opacity: 1;
+    }
+    .orb,
+    .bob,
+    .pulse-ring,
+    .spin-slow,
+    .spin-slower,
+    .ecg-line,
+    .text-shine,
+    .marquee-track,
+    .scroll-wheel {
+      animation: none;
+    }
+    .ecg-line {
+      stroke-dashoffset: 0;
+    }
+  }
+}
